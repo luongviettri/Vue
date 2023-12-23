@@ -5,7 +5,6 @@ import { describe, expect } from "vitest";
 describe("MainNav", () => {
   it("displays company name", () => {
     render(MainNav);
-    // screen.debug();
     const companyName = screen.getByText("Fukuda AI");
     expect(companyName).toBeInTheDocument();
   });
