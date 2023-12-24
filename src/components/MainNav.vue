@@ -24,7 +24,12 @@
 
         <div class="ml-auto flex h-full items-center">
           <profile-image v-if="isLoggedIn" />
-          <action-button v-else v-on:click="loginUser" text="Sign in" />
+          <action-button
+            v-else
+            text="Sign in"
+            v-on:click="loginUser"
+            type="primary"
+          />
         </div>
       </div>
     </div>
