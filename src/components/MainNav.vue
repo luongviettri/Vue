@@ -27,6 +27,8 @@
           <action-button v-else text="Sign in" v-on:click="loginUser" />
         </div>
       </div>
+
+      <the-subnav />
     </div>
   </header>
 </template>
@@ -34,11 +36,14 @@
 <script>
 import ActionButton from "./ActionButton.vue";
 import ProfileImage from "./ProfileImage.vue";
+import TheSubnav from "./TheSubnav.vue";
+
 export default {
   name: "MainNav",
   components: {
     ActionButton,
     ProfileImage,
+    TheSubnav,
   },
   data() {
     return {
