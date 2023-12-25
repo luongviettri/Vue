@@ -4,14 +4,23 @@ import { describe, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 describe("MainNav", () => {
+  const renderMainNav = () => {
+    render(MainNav, {
+      global: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
+  };
   it("displays company name", () => {
-    render(MainNav);
+    renderMainNav();
     const companyName = screen.getByText("Fukuda AI");
     expect(companyName).toBeInTheDocument();
   });
 
   it("displays menu items for navigation", () => {
-    render(MainNav);
+    renderMainNav();
     const navigationMenuItems = screen.getAllByRole("listitem");
     const navigationMenuTexts = navigationMenuItems.map((item) => {
       return item.textContent;
@@ -29,7 +38,7 @@ describe("MainNav", () => {
 
   describe("Khi user đăng nhập", () => {
     it("hiển thị avatar của user", async () => {
-      render(MainNav);
+      renderMainNav();
 
       //! kiểm tra profile image chưa có
       let profileImage = screen.queryByRole("img", {
